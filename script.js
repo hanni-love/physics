@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // D-Day 카운트다운
     const countdownElement = document.getElementById('countdown-timer');
 
-    const targetDate = new Date('2024-08-23T16:30:00Z'); // 목표 날짜 설정
+    const targetDate = new Date('2024-08-23T16:30:00 + 09:00'); // 목표 날짜 설정
 
     const updateCountdown = () => {
         const now = new Date();
