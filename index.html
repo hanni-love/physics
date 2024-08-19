@@ -1,31 +1,103 @@
-/* 기존 스타일링 코드가 여기에 포함되어 있다고 가정합니다 */
-
-/* 상금 분배 정보를 위한 스타일 추가 */
-.prize-info {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 1rem;
-    position: relative;
-    z-index: 10; /* 카드와의 겹침 방지 */
-}
-
-.prize-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.prize-info p {
-    margin: 10px 0;
-}
-
-.prize-info ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.prize-info ul li {
-    margin-bottom: 5px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물리 골든벨 - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card">
+        <svg 
+             viewBox="0 0 100% 100%"
+             xmlns='http://www.w3.org/2000/svg'
+             class="noise"
+             >
+          <filter id='noiseFilter'>
+            <feTurbulence 
+                          type='fractalNoise' 
+                          baseFrequency='0.85' 
+                          numOctaves='6' 
+                          stitchTiles='stitch' />
+          </filter>
+      
+          <rect
+                width='100%'
+                height='100%'
+                preserveAspectRatio="xMidYMid meet"
+                filter='url(#noiseFilter)' />
+        </svg>
+        <div class="content">
+          <h1>물리 골든벨</h1>
+          <p>일시: 2024년 8월 23일</p>
+          <p>장소: 5층 물리실</p>
+          <p>상금: 총 30만원 + 각종 참가상</p>
+          <div id="countdown">
+            <p id="countdown-timer"></p>    
+          </div>
+        </div>
+    </div>
+    <div class="gradient-bg">
+        <svg 
+             viewBox="0 0 100vw 100vw"
+             xmlns='http://www.w3.org/2000/svg'
+             class="noiseBg"
+             >
+          <filter id='noiseFilterBg'>
+            <feTurbulence 
+                          type='fractalNoise'
+                          baseFrequency='0.6'
+                          stitchTiles='stitch' />
+          </filter>
+      
+          <rect
+                width='100%'
+                height='100%'
+                preserveAspectRatio="xMidYMid meet"
+                filter='url(#noiseFilterBg)' />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+        <div class="gradients-container">
+          <div class="g1"></div>
+          <div class="g2"></div>
+          <div class="g3"></div>
+          <div class="g4"></div>
+          <div class="g5"></div>
+          <div class="interactive"></div>
+        </div>
+    </div>
+    
+    <!-- 상금 분배 정보 섹션 추가 -->
+    <section class="prize-info">
+        <h2>상금 분배 방식</h2>
+        <p>이번 물리 골든벨의 상금 분배 방식은 다음과 같습니다:</p>
+        <ul>
+            <li>총 상금: 30만원</li>
+            <li>1명씩 탈락 시: 탈락자마다 5천원씩 지급</li>
+            <li>2명씩 탈락 시: 탈락자마다 5천원씩 지급 (한 번만 지급됨)</li>
+        </ul>
+        <p>탈락자가 1명일 경우와 2명일 경우에 상금이 분배되는 방식은 아래와 같습니다:</p>
+        <p><strong>1명 탈락 시:</strong> 남아있는 참가자들에게 5천원씩 지급</p>
+        <p><strong>2명 탈락 시:</strong> 남아있는 참가자들에게 각각 5천원씩 지급 (한 번만 지급됨)</p>
+        <p>최종 1등의 누적 상금은 다음과 같은 방식으로 계산됩니다:</p>
+        <ul>
+            <li>10명 → 9명 탈락 시: 5천원</li>
+            <li>9명 → 7명 탈락 시: 1만원</li>
+            <li>7명 → 6명 탈락 시: 1만 5천원</li>
+            <li>6명 → 4명 탈락 시: 2만원</li>
+            <li>4명 → 3명 탈락 시: 2만 5천원</li>
+            <li>3명 → 1명 탈락 시: 3만원</li>
+        </ul>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
