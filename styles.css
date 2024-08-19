@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-@font-face {
-    font-family: 'PTBandocheB';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/PTBandocheB.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
 :root {
   --color-bg1: rgb(8, 10, 15);
   --color-bg2: rgb(0, 17, 32);
@@ -29,7 +23,6 @@
   color:#FFF;
   background: transparent;
   border:none;
-  font-family: "PTBandocheB" !important;
 }
 
 html, body {
@@ -58,14 +51,13 @@ h1, h2, h3 {
   left: 50%;
   transform: translate(-50%, -50%);
   user-select: none;
-  max-width: 800px;
+  max-width: 600px;
   padding: 48px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 8px;
   box-shadow: 0 4px 90px rgba(0,0,0,0.1);
   overflow: hidden;
-  min-width: 350px;
   &:before {
     content: "";
     position: absolute;
@@ -280,36 +272,4 @@ p {
 
     opacity: 0.7;
   }
-}
-
-/* 기존 스타일링 코드가 여기에 포함되어 있다고 가정합니다 */
-
-/* 상금 분배 정보를 위한 스타일 추가 */
-.prize-info {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 1rem;
-    position: relative;
-    z-index: 10; /* 카드와의 겹침 방지 */
-}
-
-.prize-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.prize-info p {
-    margin: 10px 0;
-}
-
-.prize-info ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.prize-info ul li {
-    margin-bottom: 5px;
 }
